@@ -1,0 +1,14 @@
+{
+  "name": "filter youtube videos",
+  "version": "1.0.0",
+  "description": "on Youtube homepage, remove the videos that aren't worth watching",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/"],
+      "js": ["content-script.js"],
+
+      "css": ["style.css"]
+    }
+  ]
+}
