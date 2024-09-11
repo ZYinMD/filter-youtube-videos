@@ -26,8 +26,8 @@ function filterVideos() {
         // find the wrapper div of the video
         const videoContainer = findVideoContainer(span);
         // either dim it or delete it, try both approaches and see which is better
-        // videoContainer.style.opacity = 0.1;
-        videoContainer.remove(); // when doing this, in theory, it can often happen that the video div is removed twice because it met both conditions. But in practice, it didn't throw any error, so I'll just not worry about it
+        videoContainer.style.opacity = 0.1;
+        // videoContainer.remove(); // when doing this, in theory, it can often happen that the video div is removed twice because it met both conditions. But in practice, it didn't throw any error, so I'll just not worry about it
       }
     });
 }
