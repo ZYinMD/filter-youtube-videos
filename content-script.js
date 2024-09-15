@@ -22,12 +22,14 @@ function filterVideos() {
       if (text.includes("ago") && !text.includes("year")) {
         keep = false;
       }
-      if (!keep) {
-        // find the wrapper div of the video
-        const videoContainer = findVideoContainer(span);
-        // either dim it or delete it, try both approaches and see which is better
+      // find the wrapper div of the video
+      const videoContainer = findVideoContainer(span);
+      if (keep) {
+        // if it's a video I should watch, make it visible
+        videoContainer.style.opacity = "";
+      } else {
         videoContainer.style.opacity = 0.1;
-        // videoContainer.remove(); // when doing this, in theory, it can often happen that the video div is removed twice because it met both conditions. But in practice, it didn't throw any error, so I'll just not worry about it
+        // videoContainer.remove(); // Tried, not good, every remove causes huge layout shifts and leads to new fetches, very messy. Btw, when doing this, in theory, it can often happen that the video div is removed twice because it met both conditions. But in practice, it didn't throw any error, so I'll just not worry about it
       }
     });
 }
